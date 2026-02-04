@@ -71,6 +71,7 @@ def init_db() -> None:
     # Ensure legacy databases have the new item_id column in "order"
     cur.execute('PRAGMA table_info("order")')
     columns = [row["name"] for row in cur.fetchall()]
+    
     if "item_id" not in columns:
         cur.execute('ALTER TABLE "order" ADD COLUMN item_id INTEGER')
 
