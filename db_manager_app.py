@@ -15,7 +15,7 @@ def get_connection() -> sqlite3.Connection:
 
 
 def init_db() -> None:
-    """Create schema and insert sample data if database is empty."""
+    """Create schema and insert sample data if database is empty. --- """
     conn = get_connection()
     cur = conn.cursor()
 
